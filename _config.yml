@@ -21,18 +21,18 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Jiankai Xing"
 description              : "My personnal homepage"
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+url                      : "https://jkxing.github.io"
+baseurl                  : ""
+repository               : "jkxing/jkxing.github.io"
+teaser                   : "/avatar.jpg"
+logo                     : ""
+masthead_title           : "Skylog"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  provider               : "disqus"
   disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : "https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-"
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -94,14 +94,11 @@ analytics:
 # Site Author
 author:
   name             : "Jiankai Xing"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an laji."
-  location         : "Changchun,Jilin,China"
-  email            :
+  avatar           : "/avatar.jpg"
+  bio              : "THU CS 3rd year student"
+  location         : "Changchun, Jilin, China"
+  email            : "jkxing1210@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: mailto:jkxing1210@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://jkxing.github.io"

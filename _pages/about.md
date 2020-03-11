@@ -2,6 +2,7 @@
 title: "About Myself"
 layout: archive
 permalink: /About/
+author_profile: true
 ---
 
 A variety of common markup showing how the theme styles them.
