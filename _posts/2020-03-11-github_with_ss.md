@@ -1,9 +1,10 @@
 ---
-layout: posts
+layout: post
 title: 如何利用Socks代理加速github访问
 date: 2020-03-11 15:15:42 +0800
 categories: blog
-tags: ["技术","网络"]
+tags: [tricks]
+comments: true
 ---
 ## 前提条件
 已经有socks5代理，有密钥
