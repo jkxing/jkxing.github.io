@@ -1,7 +1,7 @@
 ---
-title: "Archive Layout with Content"
+title: "About Myself"
 layout: archive
-permalink: /about/
+permalink: /About/
 ---
 
 A variety of common markup showing how the theme styles them.
