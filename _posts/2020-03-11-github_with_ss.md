@@ -3,7 +3,7 @@ layout: post
 title: 如何利用Socks5代理加速github访问
 date: 2020-03-11 15:15:42 +0800
 categories: blog
-tags: [tricks]
+tags: [tricks,Network]
 comments: true
 ---
 
