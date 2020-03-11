@@ -1,11 +1,13 @@
 ---
 layout: post
-title: 如何利用Socks代理加速github访问
+title: 如何利用Socks5代理加速github访问
 date: 2020-03-11 15:15:42 +0800
 categories: blog
 tags: [tricks]
 comments: true
 ---
+
+# 如何利用Socks5代理加速github访问
 ## 前提条件
 已经有socks5代理，有密钥
 ## 方法
