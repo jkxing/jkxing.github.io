@@ -1,27 +1,27 @@
 # Site settings
-title: 博客名字 # 你的博客名字，可以定义修订
+title: jkxing's Blog # 你的博客名字，可以定义修订
 header-img: "img/green.jpg"
 tagline: "cn"  
-description: "这是我的博客"  # 一句话描述你的博客
+description: "m有personnal homepage"  # 一句话描述你的博客
 baseurl: ""
-url: "http://cnfeat"  # 此处填写你的博客地址 
+url: "http://jkxing.github.io"  # 此处填写你的博客地址 
 
 # About/contact
 owner: 
-  name: "作者名字" # 填写作者信息：名字
-  email: X@gmail.com # 填写作者信息：邮箱
-  bio: "你的博客描述" # 填写作者信息：博客描述
+  name: "Jiankai Xing" # 填写作者信息：名字
+  email: jkxing1210@gmail.com # 填写作者信息：邮箱
+  bio: "My personnal blog" # 填写作者信息：博客描述
 
 # Data
 gavatar: img/favicon.png # 浏览器地址栏小图标，可自定义更改
 favicon: img/favicon.png # 浏览器地址栏小图标，可自定义更改
 
 douban_username:  # 你的豆瓣id
-twitter_username: 
-github_username: 
-facebook_username: 
-weibo_username: 
-zhihu_username: 
+twitter_username: akashic1
+github_username: jkxing
+facebook_username: jkxing
+weibo_username: Skylines37
+zhihu_username: xing-jian-kai
 
 # Build settings  
 # use Github Flavored Markdown !important  
@@ -43,7 +43,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "你的名字" # 你的名字
+      author: "Jiankai Xing" # 你的名字
       header-img: "img/green.jpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
