@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: posts
 title: 如何利用Socks代理加速github访问
-date: 2020-03-10
+date: 2020-03-11 15:15:42 +0800
 categories: blog
 tags: ["技术","网络"]
 ---
