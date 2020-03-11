@@ -1,0 +1,22 @@
+---
+layout: post
+title: 如何利用Socks代理加速github访问
+date: 2020-03-10
+categories: blog
+tags: ["技术","网络"]
+---
+## 前提条件
+已经有socks5代理，有密钥
+## 方法
+在密钥目录添加config文件，加入如下内容
+
+```
+# github
+Host github.com
+ProxyCommand connect -H 127.0.0.1:3737 %h %p  # 3737 is my port number
+HostName %h
+Port 22
+User git
+IdentityFile  ~/.ssh/id_rsa 
+IdentitiesOnly yes
+```
