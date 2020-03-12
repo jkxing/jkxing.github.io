@@ -1,7 +1,7 @@
 ---
 layout: list
 title: Tricks
-slug: tricks
+slug: Tricks
 menu: true
 order: 4
 description: >

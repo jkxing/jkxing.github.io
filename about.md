@@ -4,6 +4,6 @@ title: About
 description: >
   About me
 menu: true
-order: 2
+order: 1
 comments: true
 ---
