@@ -1,3 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
+  <entry>
+    <title>piwigo_deploy</title>
+    <url>/2022/08/16/piwigo-deploy/</url>
+    <content><![CDATA[<h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><ul>
+<li>买了一个rk3588的小主机，装了Ubuntu，没想好能干点啥</li>
+<li>和女朋友的400天纪念日要到了</li>
+<li>最近拍了好多照片</li>
+</ul>
+<h1 id="决定"><a href="#决定" class="headerlink" title="决定"></a>决定</h1><p>用rk3588搭一个本地照片服务器，挑400张照片当作纪念日的仪式——“400天400张”</p>
+<h1 id="选型"><a href="#选型" class="headerlink" title="选型"></a>选型</h1><p>肯定是基于docker来做了，看看常见的自建相册，看到最常见的是这俩：</p>
+<ul>
+<li>photoprism</li>
+<li>piwigo</li>
+</ul>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>开始觉得piwigo还在用php，太老了，于是先搭了一个photoprism</p>
+<h2 id="photoprism"><a href="#photoprism" class="headerlink" title="photoprism"></a>photoprism</h2><p>这个很新，官网文档很好，直接用官网的docker-compose就好了（安装docker我就不写了），试用了一下，评价如下：</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>速度快</li>
+<li>动画优雅</li>
+<li>部署容易</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>界面单调，好像还改不了，主页上就是相册的罗列，还很小，不美观</li>
+<li>人脸识别功能就是个笑话，100张人像就识别出来10几个</li>
+</ul>
+<p>缺点有点难以忍受，遂放弃</p>
+<h2 id="piwigo"><a href="#piwigo" class="headerlink" title="piwigo"></a>piwigo</h2><p>这个用docker搭的轮子虽然有，但是不多，简单写一下</p>
+<p>这个需要和数据库相连，所以可以再搞一个数据库的docker</p>
+<p>图方便，想找一个一键部署的，找到了<a href="https://github.com/moritzheiber/piwigo-docker">这个</a>，看着不错，部署一下。</p>
+<p>发现mysql的image不适配armv8架构，于是换了一个armv8的mysql</p>
+<p>成功了，但是只能通过网页传照片</p>
+<p>然后尝试bind一个volume进去，开始一直bind不上，不知道怎么回事，彻底重搞一下就好了，这里折腾了蛮久。</p>
+<p>把最终的docker-compose放一下</p>
+<figure class="highlight docker"><table><tr><td class="code"><pre><span class="line">version: <span class="string">&#x27;3&#x27;</span></span><br><span class="line">services:</span><br><span class="line">  piwigo:</span><br><span class="line">    container_name: piwigo</span><br><span class="line">    image: piwigo-docker:latest</span><br><span class="line">    networks:</span><br><span class="line">      - piwigo</span><br><span class="line">    ports:</span><br><span class="line">      - <span class="string">&quot;&lt;宿主端口号&gt;:8000&quot;</span></span><br><span class="line">    volumes:</span><br><span class="line">            - &lt;宿主机映射目录&gt;:/piwigo/piwigo/galleries</span><br><span class="line"></span><br><span class="line">  mysql:</span><br><span class="line">    container_name: piwigo_mysql</span><br><span class="line">    image: arm64v8/mysql</span><br><span class="line">    command: [<span class="string">&quot;--default-authentication-plugin=mysql_native_password&quot;</span>]</span><br><span class="line">    networks:</span><br><span class="line">      - piwigo</span><br><span class="line">    environment:</span><br><span class="line">      MYSQL_USER: <span class="string">&quot;piwigo&quot;</span></span><br><span class="line">      MYSQL_PASSWORD: <span class="string">&quot;piwigo&quot;</span></span><br><span class="line">      MYSQL_DATABASE: <span class="string">&quot;piwigo&quot;</span></span><br><span class="line">      MYSQL_RANDOM_ROOT_PASSWORD: <span class="string">&quot;true&quot;</span></span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">  piwigo:</span><br></pre></td></tr></table></figure>
+<p>docker 镜像用的就是刚才那个github链接里的，登录什么的也参考那个连接就行了</p>
+<p>提示一下：把照片传到bind出来的目录后要在piwigo管理页面同步一下才能导入</p>
+<p>piwigo的评价：</p>
+<h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>主题丰富（插件看着也很多，还没试），装了一个bootstrap的theme（管理员界面的官方商城就有）</li>
+<li>比较美观，头图、相册显示大小都可以调</li>
+</ul>
+<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>速度有点慢</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然简单，但是加起来也折腾了4-5个小时，对docker什么的不太熟，碰到一些bug又有点无头苍蝇乱撞的感觉，还是自己能力不太够，还有就是看文档要再仔细一点，不要光抄命令。</p>
+<p>对于相册的选择的话建议也就比较显然了，piwigo现在更好用，但也有缺点，photoprism未来可期。</p>
+]]></content>
+      <tags>
+        <tag>Technique</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Photo Test</title>
+    <url>/2021/08/10/photoTest/</url>
+    <content><![CDATA[<p><img src="/2021/08/10/photoTest/1.jpg"></p>
+<span id="more"></span>
+<p><img src="https://cdn.jsdelivr.net/gh/jkxing/Images@main/iMac%E5%80%92%E5%BD%B1.jpg" alt="iMac倒影"><br><img src="https://i.loli.net/2021/08/10/oV6P3l7RgqzGZDK.jpg" alt="篮球"></p>
+]]></content>
+      <tags>
+        <tag>photography</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客双端部署设置</title>
+    <url>/2023/01/24/blog-deploy/</url>
+    <content><![CDATA[<p>这个博客部署在了两个地方，一个是github托管的jkxing.github.io，另一个是腾讯云的服务器，域名jiankai-cloud.ltd，后者在备案的时候需要用一个奇怪的名字作为title，但我一直没管。前两天检查的时候说我名字不对，所以就想着部署两份出来，一份和原来一样传github，一份按照要求改后传腾讯。<br>其实改法也很简单.首先复制一份_config.yaml出来，改一个名字，把该改的改了，然后改下deploy，这里我用的是rsync,改成下面这样就行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: rsync</span><br><span class="line">  host: hostname</span><br><span class="line">  user: username</span><br><span class="line">  root: path</span><br><span class="line">  port: port</span><br><span class="line">  delete: true</span><br><span class="line">  verbose: true</span><br><span class="line">  ignore_errors: true</span><br></pre></td></tr></table></figure>
+<p>然后生成用<code>hexo g --config new_config.yml</code>, 预览用<code>hexo s --config new_config.yml</code>，部署用<code>hexo d --config new_config.yml</code>，反正就加个后缀就行了。</p>
+<p>官网给的，也是最容易搜索到的方法用着报错，这是从评论区里找的，所以就放在这里记录一下。</p>
+]]></content>
+  </entry>
 </search>
