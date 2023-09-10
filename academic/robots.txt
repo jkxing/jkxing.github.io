@@ -1,1 +1,1 @@
-Sitemap: https://jkxing.github.io/academic/sitemap.xml
+Sitemap: http://localhost:4000/academic/sitemap.xml
