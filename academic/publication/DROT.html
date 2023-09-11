@@ -37,7 +37,7 @@
 
 
 
-  <meta property="og:description" content="Differentiable Rendering">
+  <meta property="og:description" content="Jiankai Xing, Fujun Luan, Ling-Qi Yan, Xuejun Hu, Houde Qian, Kun Xu">
 
 
 
@@ -169,97 +169,25 @@
 
 
 
-<div id="main" role="main">
-  
-
-
-  <div class="sidebar sticky">
-  
-
-
-
-<div itemscope itemtype="http://schema.org/Person">
-
-  <div class="author__avatar">
-    
-    	<img src="https://jkxing.github.io/academic/images/avatar.jpeg" alt="Jiankai Xing">
-    
-  </div>
-
-  <div class="author__content">
-    <h3 class="author__name">Jiankai Xing</h3>
-    <p class="author__bio">3rd year Ph.D candidate in Computer Science & Technology, Tsinghua University</p>
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Beijing, China</li>
-      
-      
-      
-      
-        <li><a href="mailto:xjk21@mails.tsinghua.edu.cn"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
-      
-      
-       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-        <li><a href="https://github.com/jkxing"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-        <li><a href="https://scholar.google.com/citations?user=E65sZH8AAAAJ&hl=en"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
-      
-      
-      
-        <li><a href="https://orcid.org/0000-0002-8341-9952"><i class="ai ai-orcid-square ai-fw"></i> ORCID</a></li>
-      
-      
-      
-    </ul>
-  </div>
-</div>
-
-  
-  </div>
-
-
+<div>
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
     <meta itemprop="headline" content="Differentiable Rendering using RGBXY Derivatives and Optimal Transport">
-    <meta itemprop="description" content="Differentiable Rendering">
+    <meta itemprop="description" content="Jiankai Xing, Fujun Luan, Ling-Qi Yan, Xuejun Hu, Houde Qian, Kun Xu">
     <meta itemprop="datePublished" content="November 30, 2022">
     
 
     <div class="page__inner-wrap">
       
         <header>
+          <p></p>
+          <p></p>
           <h1 class="page__title" itemprop="headline">Differentiable Rendering using RGBXY Derivatives and Optimal Transport
 </h1>
           
         
         
         
-          <p>Published in <i>ACM Transactions on Graphics, Volume 41, Issue 6</i>, 2022 </p>
+          <p>Published in <i>Siggraph Asia 2022, ACM Transactions on Graphics, Volume 41, Issue 6</i>, 2022 </p>
         
         
              
@@ -269,11 +197,22 @@
       
 
       <section class="page__content" itemprop="text">
-        <p><a href="https://doi.org/10.1145/3550454.3555479">View paper here</a></p>
+        <p><a href="https://jkxing.github.io/academic">Jiankai Xing</a>, <a href="https://luanfujun.com">Fujun Luan</a>, <a href="https://sites.cs.ucsb.edu/~lingqi/">Ling-Qi Yan</a>, Xuejun Hu, Houde Qian, <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Kun Xu</a></p>
 
-<p><a href="https://github.com/jkxing/DROT">View code here</a></p>
+<p><a href="https://doi.org/10.1145/3550454.3555479"><img src="../assets/pdf-icon.png" alt="width=20%" />Paper</a>
+<a href="https://github.com/jkxing/DROT"><img src="../assets/github-icon.png" alt="width=20%" />Code</a></p>
 
-<p>Recommended citation:</p>
+<p><img src="../assets/teaser.png" alt="" /></p>
+
+<h1 id="abstract">Abstract</h1>
+
+<p>Traditional differentiable rendering approaches are usually hard to converge in inverse rendering optimizations, especially when initial and target object locations are not so close. Inspired by Lagrangian fluid simulation, we present a novel differentiable rendering method to address this problem. We associate each screen-space pixel with the visible 3D geometric point covered by the center of the pixel and compute derivatives on geometric points rather than on pixels. We refer to the associated geometric points as point proxies of pixels. For each point proxy, we compute its 5D RGBXY derivatives which measures how its 3D RGB color and 2D projected screen-space position change with respect to scene parameters. Furthermore, in order to capture global and long-range object motions, we utilize optimal transport based pixel matching to design a more sophisticated loss function. We have conducted experiments to evaluate the effectiveness of our proposed method on various inverse rendering applications and have demonstrated superior convergence behavior compared to state-of-the-art baselines.</p>
+
+<h1 id="video">Video</h1>
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/chVXIxsnmz8?si=X6XX3jd9mj0lFeeB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe></center>
+
+<h2 id="recommended-bibtex-citation">Recommended Bibtex Citation</h2>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@article{Xing2022drot,
     title = {Differentiable Rendering using RGBXY Derivatives and Optimal Transport},
     author = {Xing, Jiankai and Luan, Fujun and Yan, Ling-Qi and Hu, Xuejun and Qian, Houde and Xu, Kun},
