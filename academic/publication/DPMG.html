@@ -200,17 +200,14 @@
 <p><a href="../files/DPMG.pdf"><img src="../assets/pdf-icon.png" alt="width=20%" />Paper</a>
 <a href="https://github.com/jkxing/DPMG"><img src="../assets/github-icon.png" alt="width=20%" />Code</a></p>
 
-<!-- <div align=center><img src="../assets/teaser-EPSM.png" width = "100%" height = "100%"/></div>
-<div align=center>Fig. 1 Optimizing the 2D translation vectors of eight specimen objects via physically based differentiable rendering. Note that the specimen objects are placed inside a glass box and are viewed through nested reflection and refraction. </div> -->
+<div align="center"><img src="../assets/teaser-DPMG.png" width="100%" height="100%" /></div>
+<div align="center">Fig. 1 Visual comparisons between our differentiable photon mapping method with several state-of-the-art physics-based differentiable rendering methods. The scene contains a ring behind a magnifying glass within the Cornell box. The optimizing parameters include the color of the diamond on the ring and the thickness of the glass. Initially the magnifying glass is very thin and the goal of optimization is to thicken the magnifying glass and to modify the color of the diamond to match the magnified view of the ring in the target image. The comparison baseline methods include attached PT (a reimplemented simplified version of attached path replay backpropagation), ptracer, Plateau-reduced Differentiable Path Tracing (PRDPT), and the original extended path space manifolds based method (ori. EPSM).  For better display quality, the displayed visual results of each method shown in the figure are re-rendered with 8192 spps using that method, except that path tracing is used for re-rendering the displayed visual results of ptracer (marked as `PT rerendered') since ptracer is not able to sample the refraction paths in this scene. </div>
 
 <h1 id="abstract">Abstract</h1>
 
 <p>Photon mapping is a fundamental and practical Monte Carlo rendering technique for efficiently simulating global illumination effects, especially for caustics and specular-diffuse-specular (SDS) paths. In this paper, we present the first differentiable rendering method for photon mapping. The core of our method is a newly introduced concept named generalized path
 gradients. Based on the extended path space manifolds (EPSMs) [Xing et al.2023], the generalized path gradients define the derivatives of the vertex positions and color contributions of a path with respect to scene parameters under given geometric constraints. By formalizing photon mapping as a path sampling technique through vertex merging [Georgiev et al. 2012]
 and incorporating a smooth differentiable density estimation kernel, we enable the differentiation of the photon mapping algorithms based on the theoretical results of generalized path gradients. Experiments demonstrate that our method is more effective than state-ofthe-art physics-based differentiable rendering methods in inverse rendering applications involving difficult illumination paths, especially SDS paths.</p>
-
-<h1 id="results">Results</h1>
-<p>To be added.</p>
 
 <h1 id="recommended-bibtex-citation">Recommended Bibtex Citation</h1>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@article{Xing2024DPMG,
